@@ -12,6 +12,7 @@ sections:
               - path: /hello-world-tutorial
               - path: /counter-tutorial
               - path: /testing-contracts
+              - path: /public-registry-tutorial
               - path: /signing-transactions
       - path: /mining # is an overview page
 
@@ -20,13 +21,11 @@ sections:
       - path: /authentication
         pages:
           - path: /overview
-          - path: /profiles
         sections:
           - title: Tutorials
             usePageTitles: true
             pages:
               - path: /building-todo-app
-              - path: /connect
       - path: /data-storage
         pages:
           - path: /overview
@@ -35,27 +34,41 @@ sections:
           - path: /storage-write-read
           - path: /collections
           - path: /collection-type
-      - path: /data-indexing
-        pages:
-          - path: /overview
-          - path: /integrate
-          - path: /models
-          - path: /collaborate
-          - path: /server-extras
+        sections:
+          - title: Data Indexing
+            usePageTitles: true
+            pages:
+              - path: /indexing-overview
+              - path: /indexing-models
+              - path: /indexing-collaborate
+              - path: /indexing-server-extras
+          - title: Tutorials
+            pages:
+              - path: /integrate-indexing
       - path: /stacks-blockchain
         pages:
           - path: /overview
-          - path: /testnet-node
-          - path: /best-practices
-          - path: /wire-format
-          - path: /atlas
-            pages:
-              - path: /overview
-              - path: /how-atlas-works
-              - path: /usage
+          - path: /testnet
+          - path: /accounts
+          - path: /transactions
+          - path: /network
+          - path: /stacking
+          - path: /local-development
         sections:
           - title: Tutorials
             pages:
+              - path: /managing-accounts
+              - path: /sending-tokens
+              - path: /running-testnet-node
+              - path: /integrate-stacking
+          - title: Stacks 1.0
+            pages:
+              - path: /stacks-1.0-info
+              - path: /best-practices
+              - path: /wire-format
+              - path: /atlas-overview
+              - path: /atlas-how-it-works
+              - path: /atlas-usage
               - path: /install-api
               - path: /installing-memcached
       - path: /stacks-wallet
@@ -73,11 +86,9 @@ sections:
           - path: /forks
           - path: /namespaces
           - path: /subdomains
-          - path: /forks
         sections:
           - title: Tutorials
             pages:
-              - path: /build-profile-search-index
               - path: /choose-name
               - path: /create-namespace
               - path: /resolve-name
@@ -87,24 +98,33 @@ sections:
       - path: /storage-hubs # this seems out of date, kill?
         pages:
           - path: /overview
-          - path: /hello-hub-choice
           - path: /gaia-admin
-          - path: /config-schema
-          - path: /digital-ocean-deploy
-          - path: /amazon-s3-deploy
+        sections:
+          - title: Tutorials
+            usePageTitles: true
+            pages:
+              - path: /amazon-ec2-deploy
+              - path: /digital-ocean-deploy
       - path: /references
         usePageTitles: true
         pages:
           - path: /blockstack-cli
-          - path: /clarity-language
-          - path: /stacks-blockchain
-          - path: /stacks-rpc-api
+          - path: /stacking-contract
+          - path: /stacks-blockchain-api
           - external:
-              href: 'https://blockstack.github.io/blockstack.js/'
-              title: blockstack.js
+              href: 'https://blockstack.github.io/stacks.js/'
+              title: Stacks.js
           - path: /faqs
           - path: /glossary
           - path: /deploy-tips
+        sections:
+          - title: Clarity Language
+            usePageTitles: true
+            pages:
+              - path: /language-overview
+              - path: /language-types
+              - path: /language-keywords
+              - path: /language-functions
   - title: Ecosystem
     pages:
       - path: /overview #pbc et al

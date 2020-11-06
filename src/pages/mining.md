@@ -13,10 +13,10 @@ images:
 
 ## Introduction
 
-Make sure you've followed our guide for getting a Stacks 2.0 Testnet node up and running, once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
+Make sure you've followed the [Running testnet node](/stacks-blockchain/running-testnet-node) tutorial. Once completed it's only a few more steps to run a proof-of-burn miner on the testnet.
 
 [@page-reference | inline]
-| /stacks-blockchain/testnet-node
+| /stacks-blockchain/running-testnet-node
 
 ## Running a miner
 
@@ -25,7 +25,7 @@ First, we need to generate a keychain. With this keychain, we'll get some testne
 To get a keychain, the simplest way is to use the `blockstack-cli`. We'll use the `make_keychain` command, and pass `-t` to indicate that we want a testnet keychain.
 
 ```bash
-npx blockstack-cli@1.1.0-beta.1 make_keychain -t
+npx @stacks/cli make_keychain -t 2>/dev/null
 ```
 
 After this runs, you'll probably see some installation logs, and at the end you should see some JSON that looks like this:
@@ -42,7 +42,14 @@ After this runs, you'll probably see some installation logs, and at the end you 
 }
 ```
 
-We need to get some testnet BTC to that address. Grab the `btcAddress` field, and head over to [the Stacks testnet website](https://testnet.blockstack.org/faucet). In the BTC faucet section, past in your `btcAddress`, and submit. You'll be sent 0.5 testnet BTC to that address. **Don't lose this information** - we'll need to use the `privateKey` field later on.
+We need to get some testnet BTC to that address. Grab the `btcAddress` field, and call the BTC faucet:
+
+```bash
+# replace <btc_address> with `btcAddress` property from your keychain
+curl -XPOST "https://stacks-node-api.blockstack.org/extended/v1/faucets/btc?address=<btc_address>" | json_pp
+```
+
+You'll be sent 0.5 testnet BTC to that address. **Don't lose this information** - we'll need to use the `privateKey` field later on.
 
 Now, we need to configure out node to use this Bitcoin keychain. In the `stacks-blockchain` folder, create a new file called `testnet/stacks-node/conf/testnet-miner-conf.toml`.
 
@@ -52,15 +59,18 @@ Paste in the following configuration:
 [node]
 rpc_bind = "0.0.0.0:20443"
 p2p_bind = "0.0.0.0:20444"
-bootstrap_node = "048dd4f26101715853533dee005f0915375854fd5be73405f679c1917a5d4d16aaaf3c4c0d7a9c132a36b8c5fe1287f07dad8c910174d789eb24bdfb5ae26f5f27@argon-master.blockstack.org:20444"
+bootstrap_node = "048dd4f26101715853533dee005f0915375854fd5be73405f679c1917a5d4d16aaaf3c4c0d7a9c132a36b8c5fe1287f07dad8c910174d789eb24bdfb5ae26f5f27@testnet-miner.blockstack.org:20444"
 # Enter your private key here!
 seed = "replace-with-your-private-key"
 miner = true
 
 [burnchain]
 chain = "bitcoin"
-mode = "argon"
-peer_host = "argon.blockstack.org"
+mode = "krypton"
+peer_host = "bitcoind.blockstack.org"
+#process_exit_at_block_height = 5340
+#burnchain_op_tx_fee = 5500
+#commit_anchor_block_within = 10000
 rpc_port = 18443
 peer_port = 18444
 
@@ -101,13 +111,150 @@ The above code will compile an optimized binary. To use it, run:
 
 ```bash
 cd ../..
-./target/release/stacks-node start --config=./testnet/conf/argon-follower-conf.toml
+./target/release/stacks-node start --config=./testnet/conf/krypton-follower-conf.toml
 ```
 
-## Enable debug logging
+### Enable debug logging
 
 In case you are running into issues or would like to see verbose logging, you can run your node with debug logging enabled. In the command line, run:
 
 ```bash
-BLOCKSTACK_DEBUG=1 stacks-node argon
+BLOCKSTACK_DEBUG=1 stacks-node krypton
 ```
+
+## Optional: Running with Docker
+
+Alternatively, you can run the testnet node with Docker.
+
+-> Ensure you have [Docker](https://docs.docker.com/get-docker/) installed on your machine.
+
+### Generate keychain and get testnet tokens
+
+Generate a keychain:
+
+```bash
+docker run -i node:14-alpine npx @stacks/cli make_keychain -t 2>/dev/null
+```
+
+Request BTC from the faucet:
+
+```bash
+# replace <btc_address> with `btcAddress` property from your keychain
+curl -XPOST "https://stacks-node-api.blockstack.org/extended/v1/faucets/btc?address=<btc_address>" | json_pp
+```
+
+### Create a config file directory
+
+You need a dedicated directory to keep the config file(s):
+
+```bash
+mkdir -p $HOME/stacks
+```
+
+### Create configuration file
+
+Inside the new `$HOME/stacks` folder, you should create a new miner config `Config.toml`:
+
+```toml
+[node]
+working_dir = "/root/stacks-node/current"
+rpc_bind = "0.0.0.0:20443"
+p2p_bind = "0.0.0.0:20444"
+# Enter your private key here!
+seed = "replace-with-your-privateKey-from-generate-keychain-step"
+miner = true
+
+[burnchain]
+chain = "bitcoin"
+mode = "krypton"
+peer_host = "bitcoind.krypton.blockstack.org"
+#process_exit_at_block_height = 5340
+#burnchain_op_tx_fee = 5500
+#commit_anchor_block_within = 10000
+rpc_port = 18443
+peer_port = 18444
+
+[[mstx_balance]]
+address = "STB44HYPYAT2BB2QE513NSP81HTMYWBJP02HPGK6"
+amount = 10000000000000000
+[[mstx_balance]]
+address = "ST11NJTTKGVT6D1HY4NJRVQWMQM7TVAR091EJ8P2Y"
+amount = 10000000000000000
+[[mstx_balance]]
+address = "ST1HB1T8WRNBYB0Y3T7WXZS38NKKPTBR3EG9EPJKR"
+amount = 10000000000000000
+[[mstx_balance]]
+address = "STRYYQQ9M8KAF4NS7WNZQYY59X93XEKR31JP64CP"
+amount = 10000000000000000
+```
+
+-> Notice that this configuration differs from the one used to run the miner locally
+
+### Run the miner
+
+-> The ENV VARS `RUST_BACKTRACE` and `BLOCKSTACK_DEBUG` are optional. If removed, debug logs will be disabled
+
+```bash
+docker run -d \
+  --name stacks_miner \
+  --rm \
+  -e RUST_BACKTRACE="full" \
+  -e BLOCKSTACK_DEBUG="1" \
+  -v "$HOME/stacks/Config.toml:/src/stacks-node/Config.toml" \
+  -p 20443:20443 \
+  -p 20444:20444 \
+  blockstack/stacks-blockchain:latest \
+/bin/stacks-node start --config /src/stacks-node/Config.toml
+```
+
+You can review the node logs with this command:
+
+```bash
+docker logs -f stacks_miner
+```
+
+## Optional: Running in Kubernetes with Helm
+
+In addition, you're also able to run a testnet node in a Kubernetes cluster using the [stacks-blockchain Helm chart](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).
+
+Ensure you have the following prerequisites installed on your machine:
+
+- [Docker](https://docs.docker.com/get-docker/)
+- [minikube](https://minikube.sigs.k8s.io/docs/start/) (Only needed if standing up a local Kubernetes cluster)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [helm](https://helm.sh/docs/intro/install/)
+
+### Generate keychain and get testnet tokens
+
+Generate a keychain:
+
+```bash
+docker run -i node:14-alpine npx @stacks/cli make_keychain -t 2>/dev/null
+```
+
+Request BTC from the faucet:
+
+```bash
+# replace <btc_address> with `btcAddress` property from your keychain
+curl -XPOST "https://stacks-node-api.blockstack.org/extended/v1/faucets/btc?address=<btc_address>" | json_pp
+```
+
+### Install the chart and run the miner
+
+To install the chart with the release name `my-release` and run the node as a miner:
+
+```bash
+minikube start # Only run this if standing up a local Kubernetes cluster
+helm repo add blockstack https://charts.blockstack.xyz
+helm install my-release blockstack/stacks-blockchain \
+  --set config.node.miner=true \
+  --set config.node.seed="replace-with-your-privateKey-from-generate-keychain-step"
+```
+
+You can review the node logs with this command:
+
+```bash
+kubectl logs -l app.kubernetes.io/name=stacks-blockchain
+```
+
+For more information on the Helm chart and configuration options, please refer to the [chart's homepage](https://github.com/blockstack/stacks-blockchain/tree/master/deployment/helm/stacks-blockchain).

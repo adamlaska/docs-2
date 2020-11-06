@@ -1,8 +1,13 @@
 ---
 title: Signing transactions
-description: Learn how to sign transactions using Blockstack Connect.
+description: Learn how to sign transactions using Blockstack Connect
 experience: advanced
 duration: 30 minutes
+tags:
+  - tutorial
+images:
+  large: /images/pages/smart-contracts.svg
+  sm: /images/pages/smart-contracts-sm.svg
 ---
 
 ## Introduction
@@ -55,11 +60,10 @@ const options = {
   },
 };
 
-await openContractCall(opts);
+await openContractCall(options);
 ```
 
-When calling `openContractCall`, you need to specify a few details. Here is the exact interface that describes what
-options you have:
+There are some required parameters needed when calling `openContractCall`. Here is the exact interface which describes what options you have:
 
 ```tsx
 interface ContractCallOptions {
@@ -80,7 +84,7 @@ interface ContractCallOptions {
 | --------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | contractAddress | string   | false    | The Stacks address that published this contract                                                                                                                               |
 | contractName    | string   | false    | The name that was used when publishing this contract                                                                                                                          |
-| functionName    | string   | false    | The name of the function you're calling. This needs to be a [public function](/references/clarity-language#define-public).                                                    |
+| functionName    | string   | false    | The name of the function you're calling. This needs to be a [public function](/references/language-clarity#define-public).                                                    |
 | functionArgs    | array    | false    | The arguments you're calling the function with. You'll need to provide the Clarity type with each argument. See the below section for details. Defaults to `[]`.              |
 | appDetails      | object   | false    | A dictionary that includes `name` and `icon`                                                                                                                                  |
 | finished        | function | false    | A callback that is fired when the transaction is signed and broadcasted. Your callback will receive an object back with a `txId` and a `txRaw`, both of which are strings.    |
@@ -223,10 +227,10 @@ const MyComponent = () => {
   const { doContractCall } = useConnect();
 
   const onClick = async () => {
-    const opts = {
+    const options = {
       /** See examples above */
     };
-    await doContractCall(opts);
+    await doContractCall(options);
   };
 
   return <span onClick={onClick}>Call my contract</span>;

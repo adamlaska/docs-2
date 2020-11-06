@@ -5,8 +5,12 @@ jobs:
   vercel-deployment:
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.5.0
+        with:
+          access_token: ${{ github.token }}
       - uses: actions/checkout@v2
-      - uses: aulneau/vercel-action@v19.0.2+3
+      - uses: aulneau/vercel-action@v20.0.0
         id: vercel_deployment_preview
         if: github.event_name == 'pull_request'
         with:
@@ -105,6 +109,8 @@ jobs:
             const prUrl = '${{steps.vercel_deployment_preview.outputs.preview-url}}'
             const changed = ${{steps.file_changes.outputs.files_modified}}
             const added = ${{steps.file_changes.outputs.files_added}}
+            const removed = ${{steps.file_changes.outputs.files_removed}}
+            const all_files = ${{steps.file_changes.outputs.files}}
 
             const commentBody = `
             #### Blockstack Documentation

@@ -10,7 +10,7 @@ and replicating global name state.
 
 There are three parts to BNS that developers should be aware of. They are:
 
-- **The BNS indexer**. This module crawls the blockchain and builds
+- **[The BNS indexer](https://github.com/blockstack/blockstack-search-indexer)**. This module crawls the blockchain and builds
   up its name database. BNS indexers do not contain any private or sensitive
   state, and can be deployed publicly. We maintain a fleet of them at
   `https://node.blockstack.org:6263` for developers to use to get started.
@@ -23,7 +23,7 @@ There are three parts to BNS that developers should be aware of. They are:
   resolve names. Internally, they generate and send transactions to register
   and modify names.
 
-The BNS indexer and BNS API comprise the **BNS node**. An architectural schematic appears below.
+The [BNS indexer](https://github.com/blockstack/blockstack-search-indexer) and BNS API comprise the **BNS node**. An architectural schematic appears below.
 
 ```
                       +-------------------------------------------------------+
@@ -50,7 +50,7 @@ Stacks Blockchain currently implements the API module and indexer module as sepa
 daemons (`blockstack api` and `blockstack-core`, respectively). However, this
 is an implementation detail, and may change in the future.
 
-The BNS indexer implements the blockchain consensus rules and network protocols.
+The [BNS indexer](https://github.com/blockstack/blockstack-search-indexer) implements the blockchain consensus rules and network protocols.
 Its main responsibility is to build up and replicate all of the name state. It does
 not have any public APIs of its own.
 
@@ -61,19 +61,10 @@ They should not attempt to talk to a BNS indexer directly, because its API is no
 for consumption by any other process except for the API module.
 
 Registering and managing names require generating and sending blockchain
-transactions, which requires running a BNS client. We provide two reference
-BNS clients:
+transactions, which requires running a BNS client.
 
-- The [Blockstack Browser](https://github.com/blockstack/blockstack-browser) gives users
-  and developers a graphical UI to resolve, register and manage names. This is the recommended
-  way to interact with BNS.
-- The Blockstack CLI gives developers low-level
+- The [Stacks CLI](https://www.npmjs.com/package/@stacks/cli) gives developers low-level
   control over resolving, registering, and managing names.
-  A new CLI that uses [blockstack.js](https://github.com/blockstack/blockstack.js)
-  is under development, and will replace the existing CLI program.
-
-We recommend that new developers use the [Blockstack
-Browser](https://github.com/blockstack/blockstack-browser).
 
 Developers who want to make their own client programs that do not use
 the reference client library code should read the

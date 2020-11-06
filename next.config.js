@@ -48,27 +48,27 @@ async function redirects() {
     },
     {
       source: '/develop/radiks-intro.html',
-      destination: '/data-indexing/overview',
+      destination: '/data-storage/indexing-overview',
       permanent: true,
     },
     {
       source: '/develop/radiks-setup.html',
-      destination: '/data-indexing/integrate',
+      destination: '/data-storage/integrate-indexing',
       permanent: true,
     },
     {
       source: '/develop/radiks-models.html',
-      destination: '/data-indexing/models',
+      destination: '/data-storage/indexing-models',
       permanent: true,
     },
     {
       source: '/develop/radiks-collaborate.html',
-      destination: '/data-indexing/collaborate',
+      destination: '/data-storage/indexing-collaborate',
       permanent: true,
     },
     {
       source: '/develop/radiks-server-extras.html',
-      destination: '/data-indexing/server-extras',
+      destination: '/data-storage/indexing-server-extras',
       permanent: true,
     },
     {
@@ -103,7 +103,7 @@ async function redirects() {
     },
     {
       source: '/core/smart/testnet-node.html',
-      destination: '/stacks-blockchain/testnet-node',
+      destination: '/stacks-blockchain/running-testnet-node',
       permanent: true,
     },
     {
@@ -138,7 +138,7 @@ async function redirects() {
     },
     {
       source: '/core/naming/search.html',
-      destination: '/naming-services/build-profile-search-index',
+      destination: '/naming-services/overview',
       permanent: true,
     },
     {
@@ -214,7 +214,7 @@ async function redirects() {
     },
     {
       source: '/storage-hubs/hello-hub-choice.html',
-      destination: '/storage-hubs/hello-hub-choice',
+      destination: '/storage-hubs/overview',
       permanent: true,
     },
     {
@@ -224,17 +224,17 @@ async function redirects() {
     },
     {
       source: '/core/atlas/overview.html',
-      destination: '/stacks-blockchain/atlas/overview',
+      destination: '/stacks-blockchain/atlas-overview',
       permanent: true,
     },
     {
       source: '/core/atlas/howitworks.html',
-      destination: '/stacks-blockchain/atlas/how-atlas-works',
+      destination: '/stacks-blockchain/atlas-how-it-works',
       permanent: true,
     },
     {
       source: '/core/atlas/howtouse.html',
-      destination: '/stacks-blockchain/atlas/usage',
+      destination: '/stacks-blockchain/atlas-usage',
       permanent: true,
     },
     { source: '/org/overview.html', destination: '/ecosystem/overview', permanent: true },
@@ -270,17 +270,32 @@ async function redirects() {
     { source: '/core/cmdLineRef.html', destination: '/references/blockstack-cli', permanent: true },
     {
       source: '/core/smart/clarityref',
-      destination: '/references/clarity-language',
+      destination: '/references/language-clarity',
       permanent: true,
     },
     {
       source: '/core/smart/clarityRef.html',
-      destination: '/references/clarity-language',
+      destination: '/references/language-clarity',
+      permanent: true,
+    },
+    {
+      source: '/references/language-clarity',
+      destination: '/references/language-overview',
+      permanent: true,
+    },
+    {
+      source: '/references/clarity-language',
+      destination: '/references/language-clarity',
       permanent: true,
     },
     {
       source: '/core/smart/rpc-api.html',
-      destination: '/references/stacks-rpc-api',
+      destination: '/references/stacks-blockchain-api',
+      permanent: true,
+    },
+    {
+      source: '/core/smart/rpc-api',
+      destination: '/references/stacks-blockchain-api',
       permanent: true,
     },
     {
@@ -312,7 +327,7 @@ async function redirects() {
     },
     {
       source: '/common/core_ref.html',
-      destination: '/references/stacks-blockchain',
+      destination: '/references/stacks-blockchain-api',
       permanent: true,
     },
     {
@@ -322,7 +337,7 @@ async function redirects() {
     },
     {
       source: '/storage/config-schema.html',
-      destination: '/storage-hubs/config-schema',
+      destination: '/storage-hubs/gaia-admin',
       permanent: true,
     },
     { source: '/org/secureref.html', destination: '/stacks-wallet/security', permanent: true },
@@ -332,6 +347,92 @@ async function redirects() {
       permanent: true,
     },
     { source: '/org/terms.html', destination: '/references/glossary', permanent: true },
+    // overview redirects
+    { source: '/stacks-blockchain', destination: '/stacks-blockchain/overview', permanent: true },
+    { source: '/smart-contracts', destination: '/smart-contracts/overview', permanent: true },
+    { source: '/data-storage', destination: '/data-storage/overview', permanent: true },
+    { source: '/data-indexing', destination: '/data-storage/indexing-overview', permanent: true },
+    { source: '/stacks-wallet', destination: '/stacks-wallet/overview', permanent: true },
+    { source: '/naming-services', destination: '/naming-services/overview', permanent: true },
+    { source: '/storage-hubs', destination: '/storage-hubs/overview', permanent: true },
+    { source: '/references', destination: '/references/blockstack-cli', permanent: true },
+    { source: '/ecosystem', destination: '/ecosystem/overview', permanent: true },
+    {
+      source: '/stacks-blockchain/testnet-node',
+      destination: '/stacks-blockchain/running-testnet-node',
+      permanent: true,
+    },
+    {
+      source: '/stacks-blockchain/atlas/overview',
+      destination: '/stacks-blockchain/atlas-overview',
+      permanent: true,
+    },
+    {
+      source: '/stacks-blockchain/atlas/how-atlas-works',
+      destination: '/stacks-blockchain/atlas-how-it-works',
+      permanent: true,
+    },
+    {
+      source: '/stacks-blockchain/atlas/usage',
+      destination: '/stacks-blockchain/atlas-usage',
+      permanent: true,
+    },
+    // data indexing changes
+    {
+      source: '/data-indexing/overview',
+      destination: '/data-storage/indexing-overview',
+      permanent: true,
+    },
+    {
+      source: '/data-indexing/integrate',
+      destination: '/data-storage/integrate-indexing',
+      permanent: true,
+    },
+    {
+      source: '/data-indexing/models',
+      destination: '/data-storage/indexing-models',
+      permanent: true,
+    },
+    {
+      source: '/data-indexing/collaborate',
+      destination: '/data-storage/indexing-collaborate',
+      permanent: true,
+    },
+    {
+      source: '/data-indexing/server-extras',
+      destination: '/data-storage/indexing-server-extras',
+      permanent: true,
+    },
+    {
+      source: '/storage-hubs/hello-hub-choice',
+      destination: '/storage-hubs/overview',
+      permanent: true,
+    },
+    {
+      source: '/naming-services/build-profile-search-index',
+      destination: '/naming-services/overview',
+      permanent: true,
+    },
+    {
+      source: '/storage-hubs/config-schema',
+      destination: '/storage-hubs/gaia-admin',
+      permanent: true,
+    },
+    {
+      source: '/storage-hubs/amazon-s3-deploy',
+      destination: '/storage-hubs/amazon-ec2-deploy',
+      permanent: true,
+    },
+    {
+      source: '/references/stacks-rpc-api',
+      destination: '/references/stacks-blockchain-api',
+      permanent: true,
+    },
+    {
+      source: '/references/stacks-blockchain',
+      destination: '/references/stacks-blockchain-api',
+      permanent: true,
+    },
   ];
 }
 
