@@ -52,7 +52,7 @@
     "next-mdx-remote": "^1.0.0",
     "nprogress": "^0.2.0",
     "p-all": "^3.0.0",
-    "preact": "^10.4.8",
+    "preact": "^10.5.8",
     "preact-render-to-string": "^5.1.4",
     "preact-ssr-prepass": "^1.1.1",
     "prettier": "^2.1.1",
