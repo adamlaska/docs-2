@@ -30,7 +30,7 @@ Here are the necessary steps to enroll your sBTC using Leather:
 
 Upon popup of the connect wallet modal, select the Leather option to connect with.
 
-<div data-with-frame="true"><figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Confirm connecting in your Leather modal popup.</p></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Confirm connecting in your Leather modal popup.</p></figcaption></figure></div>
 {% endstep %}
 
 {% step %}

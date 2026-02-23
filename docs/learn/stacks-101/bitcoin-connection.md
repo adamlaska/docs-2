@@ -132,7 +132,7 @@ The DevEx for a Bitcoin L2 should abstract away Bitcoin’s complexity but also 
 {% step %}
 #### Sustain bitcoin movements with sBTC
 
-<div data-with-frame="true"><figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure></div>
 
 sBTC unlocks Bitcoin’s programmability. You get L2 expressivity without losing Bitcoin’s familiar properties: denomination, representation, and trust model.
 {% endstep %}
@@ -140,7 +140,7 @@ sBTC unlocks Bitcoin’s programmability. You get L2 expressivity without losing
 {% step %}
 #### Plug directly into BTCFi
 
-<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 Zest, Bitflow, StackingDAO, Dual Stacking, and other major DeFi protocols on Stacks offer developer tooling for smart, composable, and Bitcoin-first applications.
 {% endstep %}
@@ -148,7 +148,7 @@ Zest, Bitflow, StackingDAO, Dual Stacking, and other major DeFi protocols on Sta
 {% step %}
 #### One cryptographic identity
 
-<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 Stacks uses the _same_ cryptographic primitive — same curve (secp256k1), same `hash160` construction — to derive Stacks addresses. They’re formatted differently (different version bytes / encoding), but underneath: the identity anchor is the same 20-byte public key hash.
 
@@ -158,7 +158,7 @@ Different layers. Same cryptographic private key.
 {% step %}
 #### React to Bitcoin state
 
-<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 One of the often-touted features of Clarity is that it has access to the state of the Bitcoin chain built in, but how does it actually do that? Because of Stacks' PoX mechanism, every Stacks block is connected to a Bitcoin block, and can query Bitcoin block header hashes with the `get-burn-block-info?` function.&#x20;
 
@@ -168,7 +168,7 @@ Clarity can read Bitcoin state directly. Parse BTC transactions. Trigger logic b
 {% step %}
 #### Capture time on the L2 at Bitcoin speed
 
-<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure></div>
 
 Clarity contracts can measure time by Bitcoin blocks. This is not just technical — it's symbolic: Like tracking time by the sun, we trust Bitcoin’s cadence.
 {% endstep %}
