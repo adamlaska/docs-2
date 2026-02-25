@@ -195,3 +195,11 @@ Tools and explorers for stacking data and statistics:
 * https://www.stacking-tracker.com/
 * https://www.stakingrewards.com/calculator?asset=stacks
 * https://stacking.tools/
+
+***
+
+### Additional Resources
+
+* \[[Stacks YT](https://youtu.be/x3ESWoA61yM?si=9M3s2QgarTfYzm0s)] What is Stacking? Earn Bitcoin on Stacks ft. Kate Parkman
+* \[[Stacks YT](https://youtu.be/cUq4_vbZfUM?si=anrHyckZS5mi1Wu-)] Earn Bitcoin Rewards: How Stacking your STX Works (Step-by-Step)
+* \[[Stacks YT](https://youtu.be/Taa7fb3dSqA?si=doqOLpi3YmbwJ-Lg)] An Introduction to Stacking ft. Hank Stoever

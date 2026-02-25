@@ -1,6 +1,6 @@
 # Audits
 
-<div data-with-frame="true"><figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure></div>
 
 #### Audits are just part of the story
 
@@ -24,24 +24,24 @@ _All 'high' or 'critical' issues listed in audits have either been mitigated or 
 
 Audits on Stacks Core
 
-{% file src="../../.gitbook/assets/Quantstamp_Network State Machine (1).pdf" %}
+{% file src="../.gitbook/assets/Quantstamp_Network State Machine (1).pdf" %}
 
-{% file src="../../.gitbook/assets/CoinFabrik - Stacks Signer Audit (1).pdf" %}
+{% file src="../.gitbook/assets/CoinFabrik - Stacks Signer Audit (1).pdf" %}
 
-{% file src="../../.gitbook/assets/Coinfabrik - Stacks PoX (1).pdf" %}
+{% file src="../.gitbook/assets/Coinfabrik - Stacks PoX (1).pdf" %}
 
-{% file src="../../.gitbook/assets/CoinFabrik - Stacks LibSigner (1).pdf" %}
+{% file src="../.gitbook/assets/CoinFabrik - Stacks LibSigner (1).pdf" %}
 
-{% file src="../../.gitbook/assets/CoinFabrik_StackerDB (1).pdf" %}
+{% file src="../.gitbook/assets/CoinFabrik_StackerDB (1).pdf" %}
 
-{% file src="../../.gitbook/assets/CoinFabrik_Signer Binary (1).pdf" %}
+{% file src="../.gitbook/assets/CoinFabrik_Signer Binary (1).pdf" %}
 
 #### Other audits
 
-{% file src="../../.gitbook/assets/NCC_Group_Stacks_Wallet_Report_2020-11-17_v1.0 (1).pdf" %}
+{% file src="../.gitbook/assets/NCC_Group_Stacks_Wallet_Report_2020-11-17_v1.0 (1).pdf" %}
 
-{% file src="../../.gitbook/assets/NCC_Group_Stacks_Blockchain_Audit_Report_2020-11-23_v1.0 (1).pdf" %}
+{% file src="../.gitbook/assets/NCC_Group_Stacks_Blockchain_Audit_Report_2020-11-23_v1.0 (1).pdf" %}
 
-{% file src="../../.gitbook/assets/Blockstack_Desktop_Wallet_Pentest_Report_11-12-2020 (1).pdf" %}
+{% file src="../.gitbook/assets/Blockstack_Desktop_Wallet_Pentest_Report_11-12-2020 (1).pdf" %}
 
 Trail of Bits Report, Stacks Blockchain (No PDF, [Github Issues List provided](https://github.com/diwakergupta/stacks-blockchain-tob-audit/issues))

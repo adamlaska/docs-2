@@ -79,3 +79,9 @@ This process is then repeated over and over as new miners are elected for tenure
 Be sure to take a look at [SIP-021](https://github.com/stacksgov/sips/blob/feat/sip-021-nakamoto/sips/sip-021/sip-021-nakamoto.md) to get a detailed description of exactly what happens under the hood during these processes.
 
 Next up, let's dig a little deeper into this idea of Bitcoin finality and how the Stacks block production mechanism achieves it.
+
+***
+
+### Additional Resources
+
+* \[[StacksDevs YT](https://youtu.be/5F73LQXf3eg?si=t7VmBp0VJp6h2VEa)] Stacks Nakamoto Release Signer Workshop
