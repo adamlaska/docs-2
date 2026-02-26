@@ -6,6 +6,7 @@
 **Builder Resources**
 
 * All stacking operations happen in the PoX contract implementation, [here](https://explorer.hiro.so/txid/0xc6d6e6ec82cabb2d7a9f4b85fcc298778d01186cabaee01685537aca390cdb46).
+* To start stacking STX, [here](https://app.gitbook.com/s/4cpTb2lbw0LAOuMHrvhA/stacking-stx).
 {% endhint %}
 
 #### The Big Picture
