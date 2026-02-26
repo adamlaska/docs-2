@@ -1,5 +1,7 @@
 # Signing
 
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/signing-cover.png" alt=""><figcaption></figcaption></figure></div>
+
 Stackers play an essential role in the Nakamoto system that had previously been the responsibility of miners. Before, miners both decided the contents of blocks, and decided whether or not to include them in the chain (i.e. by deciding whether or not to confirm them). In this system each actor has the following responsibilities necessary to make the system function reliably without forks:
 
 * **Miners** decide the contents of blocks.
