@@ -4,13 +4,28 @@ description: Check out the latest Stacks developer updates
 
 # Latest Updates
 
+### Query PoX Activity on Bitcoin with new API endpoints
+
+_February 26th, 2026_
+
+\[**Stacks API**] The new PoX-related Bitcoin transactions endpoints are now easily discoverable and indexable for applications interacting with Stacks. These endpoints expose Bitcoin-layer activity that participates in Stacks’ Proof of Transfer (PoX) so apps don’t need to manually scan and decode raw Bitcoin blocks.
+
+* Get all Bitcoin PoX transactions in a Bitcoin block:\
+  [https://api.hiro.so/extended/v2/burn-blocks/938020/pox-transactions](https://api.hiro.so/extended/v2/burn-blocks/938020/pox-transactions)
+* Get all Bitcoin PoX transactions for a Bitcoin address:\
+  [https://api.hiro.so/extended/v2/addresses/bc1qs5env6vx638xfrpx3jvrtvslke6gf5wdgjpye9kw9462289nyyqsvw3vyw/pox-transactions](https://api.hiro.so/extended/v2/addresses/bc1qs5env6vx638xfrpx3jvrtvslke6gf5wdgjpye9kw9462289nyyqsvw3vyw/pox-transactions)
+
+***
+
 ### Improved Deployment Plan Format
 
 _February 14th, 2026_
 
 \[[**Clarinet**](https://github.com/stx-labs/clarinet/releases/tag/v3.14.0)] The latest release of Clarinet (v3.14.0) comes with many small improvements. You'll also notice that the structure of the Deployment plans has changed slightly. The old format is still supported and Clarinet will automatically migrate to the new one. This is to help us bring more improvement to deployment plans in the future. You have nothing to do, but don't be surprised by this change.
 
-Reminder: we are still seeing a lot of downloads on the deprecated NPM package `@hirosystems/clarinet-sdk`, only the new `@stacks/clarinet-sdk` is maintained.
+{% hint style="warning" %}
+**Reminder**: we are still seeing a lot of downloads on the deprecated NPM package `@hirosystems/clarinet-sdk`, only the new `@stacks/clarinet-sdk` is maintained.
+{% endhint %}
 
 ***
 
