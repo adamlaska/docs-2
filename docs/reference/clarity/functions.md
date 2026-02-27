@@ -2402,6 +2402,10 @@ Note: This function is only available starting with Stacks 2.1.
 
 ## stx-account
 
+{% hint style="danger" %}
+There is a bug when `stx-account` is used within an `at-block` expression. Normally, keywords or functions executed within an `at-block` expression will return the data for that specified block. This bug causes `stx-account` always to return the same value as if evaluated at the current chain tip, even within an `at-block` expression. This behavior will be fixed in the upcoming Clarity 5 version.
+{% endhint %}
+
 Introduced in: **Clarity 2**
 
 **input:** `principal`\
@@ -2446,6 +2450,10 @@ This function returns (ok true) if the transfer is successful. In the event of a
 ***
 
 ## stx-get-balance
+
+{% hint style="danger" %}
+There is a bug when `stx-get-balance` is used within an `at-block` expression. Normally, keywords or functions executed within an `at-block` expression will return the data for that specified block. This bug causes `stx-get-balance` always to return the same value as if evaluated at the current chain tip, even within an `at-block` expression. This behavior will be fixed in the upcoming Clarity 5 version.
+{% endhint %}
 
 Introduced in: **Clarity 1**
 
